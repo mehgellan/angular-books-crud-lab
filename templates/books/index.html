@@ -4,14 +4,44 @@
   Make sure you display an image, the title, and the author.
   The title should be a link to the specific book view.
 </div> -->
-<div ng-repeat="book in indexCtrl">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8">
-        <h4>{{book.title}}</h4>
-        <img src="{{book.image}}" class="img-responsive">
-        <p>{{book.author}}</p>
-        <p>{{book.releaseDate}}</p>
+<div class="container" ng-controller="BooksIndexController as indexCtrl">
+  <div class="row">
+    <div class="col-md-8">
+      <form ng-submit="indexCtrl.createBook()">
+        <legend>Add new book</legend>
+        <div class="input-group">
+          <span class="input-group-addon">Book Title</span>
+          <input type="text" class="form-control" ng-model="indexCtrl.newBook.title">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">Author</span>
+          <input type="text" class="form-control" ng-model="indexCtrl.newBook.author">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">Image</span>
+          <input type="text" class="form-control" ng-model="indexCtrl.newBook.image">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">Release Date</span>
+          <input type="text" class="form-control" ng-model="indexCtrl.newBook.releaseDate">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+<div ng-controller="BooksIndexController as indexCtrl">
+  <div ng-repeat="book in indexCtrl.books">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <h4>{{book.title}}</h4>
+          <div class="img-thumbnail">
+            <img src="{{book.image}}" class="img-responsive" style="height:200px; width:150px;">
+          </div>
+          <p>{{book.author}}</p>
+          <p>{{book.releaseDate}}</p>
+        </div>
       </div>
     </div>
   </div>
