@@ -37,4 +37,8 @@ function BooksShowController($http, $routeParams, $location) {
     });
   };
 
+  vm.redirect = function() {
+    $location.path('https://super-crud.herokuapp.com/books');
+  };
+
 }
