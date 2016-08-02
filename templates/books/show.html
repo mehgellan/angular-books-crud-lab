@@ -2,14 +2,33 @@
 <hr>
 <div class="row">
 	<div class="col-md-8">
-		<h4><span>{{showCtrl.book.title}}</span></h4>
-		<div class="img-thumbnail">
+		<h4 ng-hide="editing">{{showCtrl.book.title}}</h4>
+		<div class="input-group" ng-show="editing">
+			<span class="input-group-addon">Book Title:</span>
+			<input type="text"  ng-model="showCtrl.book.title">
+		</div>
+		<div class="img-thumbnail" ng-hide="editing">
 			<img src="{{showCtrl.book.image}}" class="img-responsive" style="height:200px; width:150px;">
 		</div>
-		<p>Author: <span>{{showCtrl.book.author}}</span></p>
-		<p>Release Date: <span>{{showCtrl.book.releaseDate}}</span></p>
+		<div class="input-group" ng-show="editing">
+			<span class="input-group-addon">Image Url:</span>
+			<input type="text"  ng-model="showCtrl.book.image">
+		</div>
+		<p ng-hide="editing">Author: <span>{{showCtrl.book.author}}</span></p>
+		<div class="input-group" ng-show="editing">
+			<span class="input-group-addon">Author: </span>
+			<input type="text" ng-model="showCtrl.book.author">
+		</div>
+		<p ng-hide="editing">Release Date: <span>{{showCtrl.book.releaseDate}}</span></p>
+		<div class="input-group" ng-show="editing">
+			<span class="input-group-addon">Release Date:</span>
+			<input type="text" ng-model="showCtrl.book.releaseDate">
+		</div>
 	</div>
 	<div class="row">
 		<button class="btn btn-warning" ng-click="showCtrl.deleteBook()">Delete Book</button>
+		<button class="btn btn-danger" ng-show="editing" ng-click="editing = false;">Cancel Changes</button>
+		<button class="btn btn-primary" ng-hide="editing" ng-click="editing = true">Edit Book</button>
+		<button class="btn btn-info" ng-show="editing" ng-click="showCtrl.editBook(); editing = false">Save Changes</button>
 	</div>
 </div>
