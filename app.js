@@ -9,16 +9,15 @@ config.$inject = ['$routeProvider', '$locationProvider'];
 function config (  $routeProvider,   $locationProvider  )  {
   $routeProvider
     .when('/', {
-      templateUrl: '/templates/books/index.html'/* Include the path to the index template */,
+      templateUrl: '/templates/books/index.html',
       controller:  'BooksIndexController',
       controllerAs: 'indexCtrl'
     })
-    .when({
+    .when('/books/:id', {
       templateUrl: '/templates/books/show.html',
       controller: 'BooksShowController',
       controllerAs: 'showCtrl'
     })
-    /* Include the additional route here! */
     .otherwise({
       redirectTo: '/'
     });
