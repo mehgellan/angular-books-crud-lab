@@ -10,37 +10,37 @@
       <form ng-submit="indexCtrl.createBook()">
         <legend>Add new book</legend>
         <div class="input-group">
-          <span class="input-group-addon">Book Title</span>
+          <span class="input-group-addon">Book Title:</span>
           <input type="text" class="form-control" ng-model="indexCtrl.newBook.title">
         </div>
         <div class="input-group">
-          <span class="input-group-addon">Author</span>
+          <span class="input-group-addon">Author:</span>
           <input type="text" class="form-control" ng-model="indexCtrl.newBook.author">
         </div>
         <div class="input-group">
-          <span class="input-group-addon">Image</span>
+          <span class="input-group-addon">Image:</span>
           <input type="text" class="form-control" ng-model="indexCtrl.newBook.image">
         </div>
         <div class="input-group">
-          <span class="input-group-addon">Release Date</span>
+          <span class="input-group-addon">Release Date:</span>
           <input type="text" class="form-control" ng-model="indexCtrl.newBook.releaseDate">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
   </div>
-</div>
-<div ng-controller="BooksIndexController as indexCtrl">
+
   <div ng-repeat="book in indexCtrl.books">
     <div class="container">
-      <div class="row">
-        <div class="col-md-8">
-          <h4>{{book.title}}</h4>
-          <div class="img-thumbnail">
-            <img src="{{book.image}}" class="img-responsive" style="height:200px; width:150px;">
+        <div class="row">
+          <div class="col-md-8">
+            <h4><span>{{book.title}}</span></h4>
+            <div class="img-thumbnail">
+              <img src="{{book.image}}" class="img-responsive" style="height:200px; width:150px;">
+            </div>
+            <p>Author: <span>{{book.author}}</span></p>
+            <p>Release Date: <span>{{book.releaseDate}}</span></p>
           </div>
-          <p>{{book.author}}</p>
-          <p>{{book.releaseDate}}</p>
         </div>
       </div>
     </div>

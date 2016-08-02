@@ -27,4 +27,5 @@ function BooksIndexController( $http ) {
       console.log('ERROR', response);
     });
   };
+
 }
