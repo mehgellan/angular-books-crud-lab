@@ -37,8 +37,15 @@
       </span>
       <input type="text" ng-model="searchText" class="form-control" name="search" placeholder="search">
     </div>
+    <br>
+    <label>Sort by:</label>
+    <select name="singleSelect" ng-model="indexCtrl.singleSelect">
+      <option value="title">Title</option>
+      <option value="author">Author</option>
+      <option value="releaseDate">Release Date</option>
+    </select>
   </div>
-  <div ng-repeat="book in indexCtrl.books | filter:searchText">
+  <div ng-repeat="book in indexCtrl.books | filter:searchText | orderBy:indexCtrl.singleSelect">
     <div class="container">
         <div class="row">
           <div class="col-md-8">

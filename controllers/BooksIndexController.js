@@ -28,4 +28,7 @@ function BooksIndexController( $http ) {
     });
   };
 
+  vm.singleSelect = 'title';
+
+
 }
