@@ -27,9 +27,11 @@
 		</div>
 	</div>
 	<div class="row">
-		<button class="btn btn-warning" ng-click="showCtrl.deleteBook()">Delete Book</button>
-		<button class="btn btn-danger" ng-show="editing" ng-click="editing = false">Cancel Changes</button>
-		<button class="btn btn-primary" ng-hide="editing" ng-click="editing = true">Edit Book</button>
-		<button class="btn btn-info" ng-show="editing" ng-click="showCtrl.editBook(); editing = false">Save Changes</button>
+		<div class="col-md-6">
+			<button class="btn btn-warning" ng-click="showCtrl.deleteBook()">Delete Book</button>
+			<button class="btn btn-danger" ng-show="editing" ng-click="editing = false">Cancel Changes</button>
+			<button class="btn btn-primary" ng-hide="editing" ng-click="editing = true">Edit Book</button>
+			<button class="btn btn-info" ng-show="editing" ng-click="showCtrl.editBook(); editing = false">Save Changes</button>
+		</div>
 	</div>
 </div>

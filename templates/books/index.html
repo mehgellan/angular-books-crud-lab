@@ -47,13 +47,15 @@
   <div ng-repeat="book in indexCtrl.books | filter:searchText | orderBy:indexCtrl.singleSelect">
     <div class="container">
         <div class="row">
-          <div class="col-md-8">
-            <h4><a ng-href="/books/{{book._id}}">{{book.title}}</a></h4>
-            <div class="img-thumbnail">
-              <img src="{{book.image}}" class="img-responsive" style="height:200px; width:150px;">
+          <div class="col-xs-12">
+            <div class="col-xs-4">
+              <h4><a ng-href="/books/{{book._id}}">{{book.title}}</a></h4>
+              <div class="img-thumbnail">
+                <img src="{{book.image}}" class="img-responsive" style="height:200px; width:150px;">
+              </div>
+              <p>Author: <span>{{book.author}}</span></p>
+              <p>Release Date: <span>{{book.releaseDate}}</span></p>
             </div>
-            <p>Author: <span>{{book.author}}</span></p>
-            <p>Release Date: <span>{{book.releaseDate}}</span></p>
           </div>
         </div>
       </div>
