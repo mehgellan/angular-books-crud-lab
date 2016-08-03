@@ -4,6 +4,8 @@ angular.module('libraryApp')
 BooksIndexController.$inject=['$http'];
 function BooksIndexController( $http ) {
   var vm = this;
+  vm.newBook = {};
+
   $http({
     method: 'GET',
     url: 'https://super-crud.herokuapp.com/books'
@@ -20,9 +22,8 @@ function BooksIndexController( $http ) {
       url: 'https://super-crud.herokuapp.com/books',
       data: vm.newBook
     }).then(function successCb(response) {
-      console.log(response.data);
-      console.log(vm.books);
       vm.books.push(response.data);
+      vm.newBook = {};
     }, function errorCb(response) {
       console.log('ERROR', response);
     });

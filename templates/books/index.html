@@ -7,7 +7,7 @@
 <div class="container" ng-controller="BooksIndexController as indexCtrl">
   <div class="row">
     <div class="col-md-8">
-      <form ng-submit="indexCtrl.createBook()">
+      <form id="add-book-form" ng-show="adding" ng-submit="indexCtrl.createBook()">
         <legend>Add new book</legend>
         <div class="input-group">
           <span class="input-group-addon">Book Title:</span>
@@ -25,16 +25,15 @@
           <span class="input-group-addon">Release Date:</span>
           <input type="text" class="form-control" ng-model="indexCtrl.newBook.releaseDate">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" ng-click="adding = false" class="btn btn-primary">Submit</button>
       </form>
+      <button ng-click="adding = true" ng-hide="adding" class="btn btn-success">Add a book!</button>
     </div>
   </div>
+  <br>
   <div class="row">
-    <h4>Search the Database</h4>
     <div class="input-group">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Go!</button>
-      </span>
+      <span class="input-group-addon">Search the Database!</span>
       <input type="text" ng-model="searchText" class="form-control" name="search" placeholder="search">
     </div>
     <br>
